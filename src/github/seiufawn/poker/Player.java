@@ -6,9 +6,11 @@ import java.util.stream.IntStream;
 
 public class Player {
 
+    @Deprecated
     public final ArrayList<Poker> pokers = new ArrayList<>();
     public UUID uuid;
     public String name;
+    public int pokerSize;
 
     Player(UUID uuid, String name) {
         this.uuid = uuid;

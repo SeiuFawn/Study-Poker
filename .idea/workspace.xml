@@ -5,30 +5,24 @@
     <option name="CUSTOM_SCOPE_NAME" value="All Places" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Suit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
+    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="初始化">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,6 +36,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Color.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -102,7 +99,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RunManager" selected="应用程序.Frame">
@@ -158,8 +155,17 @@
       <workItem from="1653910113716" duration="4979000" />
       <workItem from="1653919016120" duration="9727000" />
       <workItem from="1653979093747" duration="14119000" />
-      <workItem from="1654062118887" duration="1887000" />
+      <workItem from="1654062118887" duration="5149000" />
+      <workItem from="1654070795030" duration="17008000" />
     </task>
+    <task id="LOCAL-00001" summary="初始化">
+      <created>1654064107731</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654064107731</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -213,6 +219,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -33,11 +33,4 @@ public class HelpPanel extends PanelBase {
         });
     }
 
-    //添加文字类
-    public void addLabel(String text, int x, int y, int width, int height) {
-        JLabel newLabel = new JLabel(text);
-        newLabel.setFont(Frame.PLAIN_15);
-        newLabel.setBounds(x, y, width, height);
-        add(newLabel);
-    }
 }

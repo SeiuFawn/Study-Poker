@@ -16,11 +16,17 @@ public class HomePanel extends PanelBase {
         b1.setFont(Frame.BLOD_20);
         b2.setFont(Frame.BLOD_20);
 
-        b1.setBounds(340, 170, 200, 50);
-        b2.setBounds(340, 300, 200, 50);
+        b1.setBounds(340, 300, 200, 50);
+        b2.setBounds(340, 400, 200, 50);
 
         add(b1);
         add(b2);
+
+        addLabel("请输入名字:", 340, 150, 200, 50).setFont(Frame.BLOD_20);
+        JTextField jtf = new JTextField();
+        jtf.setFont(Frame.PLAIN_20);
+        jtf.setBounds(340, 200, 200, 50);
+        add(jtf);
 
         //跳转游戏规则
         b1.addActionListener(e -> {
@@ -30,9 +36,15 @@ public class HomePanel extends PanelBase {
 
         //跳转游戏界面
         b2.addActionListener(e -> {
-            close();
-            new GamePanel();
+            // 检查玩家是否在输入框中输入自己de名字
+            if (!jtf.getText().isEmpty()) {
+                Frame.playerName = "tempName";
+
+                close();
+                new GamePanel();
+            }
         });
+        updateUI();
     }
 
 }
