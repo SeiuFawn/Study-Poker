@@ -13,7 +13,7 @@ public class HelpPanel extends PanelBase {
         JButton b3 = new JButton("返回首页");
 
         b3.setBounds(340, 400, 200, 50);
-        b3.setFont(Frame.BLOD_20);
+        b3.setFont(Frame.BOLD_20);
 
         add(b3);
 

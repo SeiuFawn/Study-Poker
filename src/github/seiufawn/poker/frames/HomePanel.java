@@ -13,8 +13,8 @@ public class HomePanel extends PanelBase {
         JButton b1 = new JButton("游戏规则");
         JButton b2 = new JButton("开始游戏");
 
-        b1.setFont(Frame.BLOD_20);
-        b2.setFont(Frame.BLOD_20);
+        b1.setFont(Frame.BOLD_20);
+        b2.setFont(Frame.BOLD_20);
 
         b1.setBounds(340, 300, 200, 50);
         b2.setBounds(340, 400, 200, 50);
@@ -22,7 +22,7 @@ public class HomePanel extends PanelBase {
         add(b1);
         add(b2);
 
-        addLabel("请输入名字:", 340, 150, 200, 50).setFont(Frame.BLOD_20);
+        addLabel("请输入名字:", 340, 150, 200, 50).setFont(Frame.BOLD_20);
         JTextField jtf = new JTextField();
         jtf.setFont(Frame.PLAIN_20);
         jtf.setBounds(340, 200, 200, 50);

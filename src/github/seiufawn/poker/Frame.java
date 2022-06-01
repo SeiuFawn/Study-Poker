@@ -9,7 +9,7 @@ import java.awt.*;
 public class Frame extends JFrame {
 
     //静态化字体
-    public static Font BLOD_20 = new Font("微软雅黑", Font.BOLD,20);
+    public static Font BOLD_20 = new Font("微软雅黑", Font.BOLD,20);
     public static Font PLAIN_20 = new Font("微软雅黑", Font.PLAIN,20);
     public static Font PLAIN_15 = new Font("微软雅黑", Font.PLAIN,15);
 

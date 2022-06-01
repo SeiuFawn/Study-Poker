@@ -46,21 +46,21 @@ public class GamePanel extends PanelBase {
 
         JButton btnPlayPoker = new JButton("出牌");
         btnPlayPoker.setBounds(275, 350, 100, 50);
-        btnPlayPoker.setFont(Frame.BLOD_20);
+        btnPlayPoker.setFont(Frame.BOLD_20);
         btnPlayPoker.setForeground(Color.WHITE);
         btnPlayPoker.setBackground(Color.GRAY);
         add(btnPlayPoker);
 
         JButton btnGiveUp = new JButton("放弃");
         btnGiveUp.setBounds(475, 350, 100, 50);
-        btnGiveUp.setFont(Frame.BLOD_20);
+        btnGiveUp.setFont(Frame.BOLD_20);
         btnGiveUp.setForeground(Color.WHITE);
         btnGiveUp.setBackground(Color.GRAY);
         add(btnGiveUp);
 
         btnLastPoker = new JButton(":)");
         btnLastPoker.setBounds(340, 200, 80, 120);
-        btnLastPoker.setFont(Frame.BLOD_20);
+        btnLastPoker.setFont(Frame.BOLD_20);
         btnLastPoker.setBackground(Color.white);
         btnLastPoker.setVisible(false);
         add(btnLastPoker);
@@ -84,7 +84,7 @@ public class GamePanel extends PanelBase {
                         addLabel("", 680, 200, 300, 20)
                 }
         );
-        playerInfos.forEach(playerInfo -> playerInfo[0].setFont(Frame.BLOD_20));
+        playerInfos.forEach(playerInfo -> playerInfo[0].setFont(Frame.BOLD_20));
 
 //        addLabel("当前出牌的是：", 370, 160, 300, 20);
         addLabel("上家打出的手牌:", 360, 140, 300, 20);
@@ -175,7 +175,7 @@ public class GamePanel extends PanelBase {
             JButton btn = new JButton(String.valueOf(i));
             add(btn);
             btnPokers.add(btn);
-            btn.setFont(Frame.BLOD_20);
+            btn.setFont(Frame.BOLD_20);
             btn.setBounds(x + 80 * i, 420, 70, 120);
             btn.setVisible(true);
             btn.setBackground(Color.LIGHT_GRAY);
