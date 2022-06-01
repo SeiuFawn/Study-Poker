@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Poker.iml" filepath="$PROJECT_DIR$/Poker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PokerServer/PokerServer.iml" filepath="$PROJECT_DIR$/PokerServer/PokerServer.iml" />
     </modules>
   </component>
 </project>

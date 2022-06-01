@@ -3,9 +3,15 @@ package github.seiufawn.poker.frames;
 import github.seiufawn.poker.Frame;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 // 面板基类
 public class PanelBase extends JPanel {
+
+    // 计时器
+    static Map<String, Timer> timerMap = new HashMap<>();
 
     String title;
 
@@ -23,7 +29,7 @@ public class PanelBase extends JPanel {
         Frame.inst.add(this);
     }
 
-    //添加文字类
+    // 添加文字类
     public JLabel addLabel(String text, int x, int y, int width, int height) {
         JLabel newLabel = new JLabel(text);
         newLabel.setFont(Frame.PLAIN_15);
@@ -31,6 +37,21 @@ public class PanelBase extends JPanel {
         add(newLabel);
         return newLabel;
     }
+
+    // 创建定时任务
+    protected void setDelayAction(String key, int delay, Runnable action) {
+        // 用类名区分各个UI面板的定时任务
+        String finalKey = this.getClass().getSimpleName() + "." + key;
+        // 如果已存在 则杀死
+        if (timerMap.containsKey(finalKey)) timerMap.get(finalKey).stop();
+        Timer timer = new Timer(delay, e -> {
+            action.run();
+            timerMap.remove(finalKey);
+        });
+        timerMap.put(finalKey, timer);
+        timer.start();
+    }
+
     /**
      * 关闭界面
      */

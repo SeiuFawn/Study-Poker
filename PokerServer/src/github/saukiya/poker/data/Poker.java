@@ -1,4 +1,4 @@
-package github.seiufawn.poker;
+package github.saukiya.poker.data;
 
 
 import java.text.MessageFormat;
@@ -9,7 +9,7 @@ public class Poker {
     public Integer value;
     public Suit suit;
 
-    Poker(String name, Integer value, Suit suit) {
+    public Poker(String name, Integer value, Suit suit) {
         this.name = name;
         this.suit = suit;
         this.value = value;
@@ -36,7 +36,7 @@ public class Poker {
                         poker.name = args[1];
                         break;
                     case "value":
-                        poker.value = Integer.valueOf(args[1]);
+                        poker.value = Integer.parseInt(args[1]);
                         break;
                     case "suit":
                         poker.suit = Suit.valueOf(args[1]);

@@ -1,27 +1,37 @@
 package github.seiufawn.poker;
 
-import java.util.ArrayList;
-import java.util.UUID;
-import java.util.stream.IntStream;
-
 public class Player {
 
-    @Deprecated
-    public final ArrayList<Poker> pokers = new ArrayList<>();
-    public UUID uuid;
     public String name;
-    public int pokerSize;
+    public int pokerSize = -1;
 
-    Player(UUID uuid, String name) {
-        this.uuid = uuid;
-        this.name = name;
+    /**
+     * 字符串转Poker
+     *
+     * @param string 字符串
+     * @return Poker 失败则是null
+     */
+    public static Player FormString(String string) {
+        Player player = new Player();
+        for (String s : string.split(",")) {
+            String[] args = s.split(":");
+            if (args.length > 1) {
+                switch (args[0]) {
+                    case "name":
+                        player.name = args[1];
+                        break;
+                    case "pokerSize":
+                        player.pokerSize = Integer.parseInt(args[1]);
+                        break;
+                }
+            }
+        }
+
+        if (player.name != null && player.pokerSize != -1) {
+            return player;
+        } else {
+            return null;
+        }
     }
 
-    public void start(ArrayList<Poker> pokerLib) {
-        IntStream.range(0, 5).forEach(b -> {
-            Poker poker = pokerLib.get((int) (Math.random() * pokerLib.size()));
-            pokers.add(poker);
-            pokerLib.remove(poker);
-        });
-    }
 }

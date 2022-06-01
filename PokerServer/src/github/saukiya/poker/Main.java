@@ -1,4 +1,8 @@
-package github.seiufawn.poker;
+package github.saukiya.poker;
+
+import github.saukiya.poker.data.Player;
+import github.saukiya.poker.data.Poker;
+import github.saukiya.poker.data.Suit;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,16 +18,16 @@ public class Main {
     public static void main(String[] args) {
         //创建玩家
         ArrayList<Player> players = new ArrayList<>();
-        players.add(new Player(UUID.randomUUID(), "P1"));
-        players.add(new Player(UUID.randomUUID(), "P2"));
-        players.add(new Player(UUID.randomUUID(), "P3"));
+        players.add(new Player(null));
+        players.add(new Player(null));
+        players.add(new Player(null));
 
         //创建牌组
         ArrayList<Poker> pokerLib = build();
         //洗牌
         Collections.shuffle(pokerLib);
         for (Player player : players) {
-            player.start(pokerLib);
+            player.startGame(pokerLib);
             player.pokers.sort(Comparator.comparingInt(o -> o.suit.value));
             player.pokers.sort(Comparator.comparingInt(o -> o.value));
         }

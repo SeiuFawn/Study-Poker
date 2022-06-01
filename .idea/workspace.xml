@@ -5,12 +5,21 @@
     <option name="CUSTOM_SCOPE_NAME" value="All Places" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="初始化">
+    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="重构字体字段">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/PokerServer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
     </list>
@@ -29,6 +38,7 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -36,6 +46,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Color.java" root0="SKIP_INSPECTION" />
@@ -88,27 +106,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "361",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/Dev/Java/Projects/Poker",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
-  }
-}]]></component>
-  <component name="RunManager" selected="应用程序.Frame">
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\Dev\Java\Projects\Study-Poker\PokerServer\src\github\saukiya\poker\data" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="github.saukiya.poker" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Frame">
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
       <module name="Poker" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="github.seiufawn.poker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="github.saukiya.poker.Server" />
+      <module name="PokerServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="github.saukiya.poker.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,10 +168,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Frame" />
-        <item itemvalue="应用程序.github.seiufawn.poker.Main" />
+        <item itemvalue="Application.Frame" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -157,6 +207,7 @@
       <workItem from="1653979093747" duration="14119000" />
       <workItem from="1654062118887" duration="5149000" />
       <workItem from="1654070795030" duration="17008000" />
+      <workItem from="1654102677192" duration="8354000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1654064107731</created>
@@ -165,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654064107731</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="重构字体字段">
+      <created>1654102961762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654102961762</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -219,10 +277,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+    <MESSAGE value="重构字体字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构字体字段" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -276,5 +336,15 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="regexState">
+    <option name="map">
+      <map>
+        <entry key="flags" value="0" />
+        <entry key="mode" value="1" />
+        <entry key="regex" value="\[(.+?)] {0,1}(.+?)" />
+        <entry key="text" value="[阿巴] " />
+      </map>
+    </option>
   </component>
 </project>

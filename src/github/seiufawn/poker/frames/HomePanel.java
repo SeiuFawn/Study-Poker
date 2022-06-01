@@ -23,7 +23,7 @@ public class HomePanel extends PanelBase {
         add(b2);
 
         addLabel("请输入名字:", 340, 150, 200, 50).setFont(Frame.BOLD_20);
-        JTextField jtf = new JTextField();
+        JTextField jtf = new JTextField(Frame.playerName);
         jtf.setFont(Frame.PLAIN_20);
         jtf.setBounds(340, 200, 200, 50);
         add(jtf);
@@ -38,7 +38,7 @@ public class HomePanel extends PanelBase {
         b2.addActionListener(e -> {
             // 检查玩家是否在输入框中输入自己de名字
             if (!jtf.getText().isEmpty()) {
-                Frame.playerName = "tempName";
+                Frame.playerName = jtf.getText();
 
                 close();
                 new GamePanel();
