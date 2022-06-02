@@ -3,7 +3,7 @@ package github.seiufawn.poker;
 public class Player {
 
     public String name;
-    public int pokerSize = -1;
+    public int size = -1;
 
     /**
      * 字符串转Poker
@@ -20,14 +20,14 @@ public class Player {
                     case "name":
                         player.name = args[1];
                         break;
-                    case "pokerSize":
-                        player.pokerSize = Integer.parseInt(args[1]);
+                    case "size":
+                        player.size = Integer.parseInt(args[1]);
                         break;
                 }
             }
         }
 
-        if (player.name != null && player.pokerSize != -1) {
+        if (player.name != null && player.size != -1) {
             return player;
         } else {
             return null;

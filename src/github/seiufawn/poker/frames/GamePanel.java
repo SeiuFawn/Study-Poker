@@ -176,14 +176,14 @@ public class GamePanel extends PanelBase {
         // 给JLabel赋值
         for (int i = 0; i < playerInfos.size(); i++) {
             JLabel[] playerInfo = playerInfos.get(i);
-            Player player = players.get(i);
+            Player player = players.size() > i ? players.get(i) : null;
             if (player != null) {
-                playerInfo[0].setText("玩家 " + players.get(i).name);
-                playerInfo[1].setText("手牌数: " + players.get(i).pokerSize);
+                playerInfo[0].setText("玩家 " + player.name);
+                playerInfo[1].setText("手牌数: " + player.size);
                 // 如果人齐了 才显示
                 playerInfo[1].setVisible(done);
             } else {
-                playerInfo[0].setText("等待中 " + players.get(i).name);
+                playerInfo[0].setText("等待中 ");
             }
         }
     }

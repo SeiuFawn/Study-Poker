@@ -6,22 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="重构字体字段">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/PokerServer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +119,7 @@
       <recent name="github.saukiya.poker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Frame">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
       <module name="Poker" />
@@ -168,21 +159,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Frame" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Frame" />
       </list>
     </recent_temporary>
   </component>
@@ -208,6 +201,7 @@
       <workItem from="1654062118887" duration="5149000" />
       <workItem from="1654070795030" duration="17008000" />
       <workItem from="1654102677192" duration="8354000" />
+      <workItem from="1654145899945" duration="1230000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1654064107731</created>

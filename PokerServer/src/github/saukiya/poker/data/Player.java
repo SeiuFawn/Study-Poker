@@ -1,5 +1,6 @@
 package github.saukiya.poker.data;
 
+import github.saukiya.poker.Server;
 import github.saukiya.poker.socket.PlayerSocket;
 
 import java.net.Socket;
@@ -19,10 +20,11 @@ public class Player {
     public String name;
 
     public Player(Socket socket) {
+        Server.players.add(this);
         this.socket = new PlayerSocket(this, socket);
         this.socket.start();
         this.uuid = UUID.randomUUID();
-        this.name = "Wait Name...";
+        this.name = uuid.toString();
     }
 
     public void startGame(ArrayList<Poker> pokerLib) {

@@ -31,7 +31,7 @@ public class PlayerSocket extends Thread {
         this.socket = socket;
         try {
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            reader = new BufferedReader(new InputStreamReader(System.in));
+            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,11 +76,12 @@ public class PlayerSocket extends Thread {
     protected void sendMessage(String type, String... args) {
         String message = MessageFormat.format("[{0}] {1}\n", type, String.join(" ", args));
         try {
+            System.out.println("send[" + getIpAndPort() + "]:" + message);
             writer.write(message);
             writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("send Message Error: " + message);
+            System.out.println("send Message Error[" + getIpAndPort() + "]: " + message);
         }
     }
 
@@ -93,12 +94,11 @@ public class PlayerSocket extends Thread {
     protected void inputMessage(String type, String[] args) throws IOException {
         switch (type) {
             case "setName":
-                if (args.length > 0)
                 player.name = args[0];
                 Server.setPlayers();
                 break;
             default:
-                System.out.println("input type error[" + player.name + "]: " + type);
+                System.out.println("input type error[" + getIpAndPort() + "]: " + type);
         }
     }
 
@@ -114,16 +114,20 @@ public class PlayerSocket extends Thread {
             while (socket != null && (input = reader.readLine()) != null) {
                 Matcher matcher = p.matcher(input);
                 if (matcher.matches() && matcher.groupCount() > 1) {
-                    String[] args = matcher.groupCount() > 2 ? matcher.group(2).split(" ") : new String[0];
-                    System.out.println("input[" + player.name + "]: " + matcher.group(1) + " -> " + Arrays.toString(args));
+                    String[] args = matcher.group(2).split(" ");
+                    System.out.println("input[" + getIpAndPort() + "]: " + matcher.group(1) + " -> " + Arrays.toString(args));
                     inputMessage(matcher.group(1), args);
                 } else {
-                    System.out.println("input unknown[" + player.name + "]: " + input);
+                    System.out.println("input unknown[" + getIpAndPort() + "]: " + input);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("input[" + player.name + "] end");
+        System.out.println("input[" + getIpAndPort() + "] end");
+    }
+
+    public String getIpAndPort() {
+        return socket.getInetAddress() + ":" + socket.getPort();
     }
 }

@@ -39,7 +39,7 @@ public class ClientSocket extends Thread {
         try {
             socket = new Socket(host, 23333);
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            reader = new BufferedReader(new InputStreamReader(System.in));
+            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             sendMessage("setName", Frame.playerName);
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,6 +57,7 @@ public class ClientSocket extends Thread {
     protected void sendMessage(String type, String... args) {
         String message = MessageFormat.format("[{0}] {1}\n", type, String.join(" ", args));
         try {
+            System.out.println("send:" + message);
             writer.write(message);
             writer.flush();
         } catch (IOException e) {
@@ -135,7 +136,7 @@ public class ClientSocket extends Thread {
             while (socket != null && (input = reader.readLine()) != null) {
                 Matcher matcher = p.matcher(input);
                 if (matcher.matches() && matcher.groupCount() > 1) {
-                    String[] args = matcher.groupCount() > 2 ? matcher.group(2).split(" ") : new String[0];
+                    String[] args = matcher.group(2).split(" ");
                     System.out.println("input: " + matcher.group(1) + " -> " + Arrays.toString(args));
                     inputMessage(matcher.group(1), args);
                 } else {
