@@ -122,8 +122,7 @@ public class PlayerSocket extends Thread {
                     System.out.println("input unknown[" + getIpAndPort() + "]: " + input);
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
         System.out.println("input[" + getIpAndPort() + "] end");
         Server.tackPlayer(player);

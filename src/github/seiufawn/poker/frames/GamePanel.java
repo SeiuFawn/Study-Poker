@@ -196,7 +196,7 @@ public class GamePanel extends PanelBase {
         lastPoker = poker;
         btnLastPoker.setVisible(poker != null);
         if (poker != null) {
-            btnLastPoker.setText(poker.name);
+            btnLastPoker.setText(poker.getName());
         }
     }
 
@@ -225,10 +225,10 @@ public class GamePanel extends PanelBase {
         int x = 430 - (int) (size / 2D * 80);
         // TODO 采用对象池技术可以进一步优化
         for (int i = 0; i < size; i++) {
-            JButton btn = new JButton(String.valueOf(i));
+            JButton btn = new JButton(pokers.get(i).getName());
             add(btn);
             btnPokers.add(btn);
-            btn.setFont(Frame.BOLD_20);
+            btn.setFont(Frame.BOLD_12);
             btn.setBounds(x + 80 * i, 420, 70, 120);
             btn.setVisible(true);
             btn.setBackground(Color.LIGHT_GRAY);

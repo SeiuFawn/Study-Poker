@@ -2,13 +2,16 @@ package github.seiufawn.poker;
 
 import github.seiufawn.poker.frames.HomePanel;
 import github.seiufawn.poker.frames.PanelBase;
+import github.seiufawn.poker.frames.GamePanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Frame extends JFrame {
 
     //静态化字体
+    public static Font BOLD_12 = new Font("微软雅黑", Font.BOLD,12);
     public static Font BOLD_20 = new Font("微软雅黑", Font.BOLD,20);
     public static Font PLAIN_20 = new Font("微软雅黑", Font.PLAIN,20);
     public static Font PLAIN_15 = new Font("微软雅黑", Font.PLAIN,15);

@@ -5,19 +5,46 @@ import java.text.MessageFormat;
 
 public class Poker {
     //牌的名字/大小/花色
-    public String name;
     public Integer value;
     public Suit suit;
 
-    Poker(String name, Integer value, Suit suit) {
-        this.name = name;
+
+    public Poker(Integer value, Suit suit) {
         this.suit = suit;
         this.value = value;
     }
 
+    // 11 12 13
+    // 14 15
+    public String getName() {
+        String name;
+        switch (value) {
+            case 15:
+                return "大王";
+            case 14:
+                return "小王";
+            case 13:
+                name = "K";
+                break;
+            case 12:
+                name = "Q";
+                break;
+            case 11:
+                name = "J";
+                break;
+            case 1:
+                name = "A";
+                break;
+            default:
+                name = String.valueOf(value);
+                break;
+        }
+        return suit + name;
+    }
+
     @Override
     public String toString() {
-        return MessageFormat.format("name:{0},value:{1},suit:{2}", name, value, suit);
+        return MessageFormat.format("value:{0},suit:{1}", value, suit);
     }
 
     /**
@@ -27,14 +54,11 @@ public class Poker {
      * @return Poker 失败则是null
      */
     public static Poker FormString(String string) {
-        Poker poker = new Poker(null, null, null);
+        Poker poker = new Poker(null, null);
         for (String s : string.split(",")) {
             String[] args = s.split(":");
             if (args.length > 1) {
                 switch (args[0]) {
-                    case "name":
-                        poker.name = args[1];
-                        break;
                     case "value":
                         poker.value = Integer.valueOf(args[1]);
                         break;
@@ -44,7 +68,7 @@ public class Poker {
                 }
             }
         }
-        if (poker.name != null && poker.value != null && poker.suit != null) {
+        if (poker.value != null && poker.suit != null) {
             return poker;
         } else {
             return null;

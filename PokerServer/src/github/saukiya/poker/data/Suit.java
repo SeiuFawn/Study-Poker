@@ -6,8 +6,7 @@ public enum Suit {
     heart("♥", 2),
     diamond("♦", 3),
     club("♣", 4),
-    king("♔", 5),
-    error("*", -1);
+    king("♔", 5);
 
     public final String show;
     public final int value;
