@@ -114,14 +114,19 @@ public class Server {
                             }
                             // 清空 lastPoker
                             lastPoker = null;
-                            setLastPoker("null", null);
+                            setLastPoker(null, null);
 
                             // 发卡给该玩家
                             currentPlayer.pokers.add(pokers.remove(0));
                             currentPlayer.socket.setPokers(currentPlayer.pokers);
                             broadcastMessage(currentPlayer.name + " 放弃该回合");
                             break;
-                        } else {
+                        }
+                        else if (players.size() != 4) {
+                            // 等待牌过程中玩家人数少于4 退出游戏逻辑
+                            break game;
+                        }
+                        else {
                             Thread.sleep(100);
                         }
                     }
@@ -141,8 +146,12 @@ public class Server {
                 }
 
                 // 游戏结束 重置当前已存在的player的Pokers
-                players.forEach(p -> p.pokers.clear());
+                players.forEach(p -> {
+                    p.pokers.clear();
+                    p.socket.setPokers(p.pokers);
+                });
                 setPlayers();
+                setLastPoker(null, null);
                 // 回到上面的 while 循环 继续等待玩家或者直接开始
                 Thread.sleep(4000);
             }
