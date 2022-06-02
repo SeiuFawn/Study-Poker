@@ -4,10 +4,14 @@ package github.saukiya.poker.data;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class Poker {
+public class Poker implements Comparable<Poker> {
+    // 特殊牌
+    final static List<Integer> SPECIALS = Arrays.asList(3, 8, 5, 10, 14, 15);
+
     //牌的名字/大小/花色
     public Integer value;
     public Suit suit;
@@ -15,6 +19,38 @@ public class Poker {
     public Poker(Integer value, Suit suit) {
         this.suit = suit;
         this.value = value;
+    }
+
+    public String getName() {
+        String name;
+        switch (value) {
+            case 15:
+                return "大王";
+            case 14:
+                return "小王";
+            case 13:
+                name = "K";
+                break;
+            case 12:
+                name = "Q";
+                break;
+            case 11:
+                name = "J";
+                break;
+            case 1:
+                name = "A";
+                break;
+            default:
+                name = String.valueOf(value);
+                break;
+        }
+        return suit.show + name;
+    }
+
+    @Override
+    public int compareTo(Poker o) {
+        int valueCompareTo = Integer.compare(value, o.value);
+        return valueCompareTo != 0 ? valueCompareTo : Integer.compare(suit.ordinal(), o.suit.ordinal());
     }
 
     @Override
@@ -53,9 +89,9 @@ public class Poker {
     /**
      * 创建牌库（并赋值）
      */
-    public static ArrayList<Poker> build() {
+    public static ArrayList<Poker> createPokers() {
         ArrayList<Poker> pokerLib = new ArrayList<>();
-        for (int i = 1; i <= 15; i++) {
+        for (int i = 15; i > 0; i--) {
             switch (i) {
                 case 15:
                 case 14:
@@ -73,7 +109,6 @@ public class Poker {
     /**
      * 获取牌类型
      *
-     * @param poker 牌对象
      * @return 2 - 功能牌(??), 1 - 特殊牌(仙人), 0 - 普通牌(妖怪)
      */
     public int getType() {
@@ -105,11 +140,12 @@ public class Poker {
      * @return 1 - A 大于 B, 0 - 等于, -1 - A 小于 B
      */
     public static int compare(Poker poker1, Poker poker2) {
+        // 如果场中没有牌 则直接返回1;
+        if (poker2 == null) return 1;
         // 获取牌类型
         int centerPokerType = poker2.getType();
 
         // 在打牌的过程中 功能牌始终可以打出去
-        List<Integer> specials = Arrays.asList(3, 8, 5, 10, 14, 15);
         switch (poker1.getType()) {
             // A2 1
             case 2:
@@ -119,8 +155,8 @@ public class Poker {
             // A1 B0 （1，A为10, -1）
             case 1:
                 if (centerPokerType == 1) {
-                    int index1 = specials.indexOf(poker1.value);
-                    int index2 = specials.indexOf(poker2.value);
+                    int index1 = SPECIALS.indexOf(poker1.value);
+                    int index2 = SPECIALS.indexOf(poker2.value);
                     return Integer.compare(index1, index2);
                 }
                 if (poker1.value == 10) return -1;

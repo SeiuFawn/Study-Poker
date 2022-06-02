@@ -42,7 +42,11 @@ public class PlayerSocket extends Thread {
     }
 
     public void setLastPoker(String playerName, Poker poker) {
-        sendMessage("setLastPoker", playerName, poker.toString());
+        if (poker == null) {
+            sendMessage("setLastPoker");
+        } else {
+            sendMessage("setLastPoker", playerName, poker.toString());
+        }
     }
 
     public void setPlayers(List<Player> players) {
@@ -97,6 +101,12 @@ public class PlayerSocket extends Thread {
                 player.name = args[0];
                 Server.setPlayers();
                 break;
+            case "sendPoker":
+                player.currentPoker = Poker.FormString(args[0]);
+                break;
+            case "giveUp":
+                player.giveUp = true;
+                break;
             default:
                 System.out.println("input type error[" + getIpAndPort() + "]: " + type);
                 break;
@@ -109,7 +119,7 @@ public class PlayerSocket extends Thread {
     @Override
     public void run() {
         // 定义接收规则 "[类型] 消息"
-        Pattern p = Pattern.compile("\\[(.+?)] ?(.+?)");
+        Pattern p = Pattern.compile("\\[(.+?)] ?(.*?)");
         String input;
         try {
             while (socket != null && (input = reader.readLine()) != null) {

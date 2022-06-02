@@ -3,7 +3,7 @@ package github.seiufawn.poker;
 
 import java.text.MessageFormat;
 
-public class Poker {
+public class Poker implements Comparable<Poker> {
     //牌的名字/大小/花色
     public Integer value;
     public Suit suit;
@@ -39,7 +39,13 @@ public class Poker {
                 name = String.valueOf(value);
                 break;
         }
-        return suit + name;
+        return suit.show + name;
+    }
+
+    @Override
+    public int compareTo(Poker o) {
+        int valueCompareTo = Integer.compare(value, o.value);
+        return valueCompareTo != 0 ? valueCompareTo : Integer.compare(suit.ordinal(), o.suit.ordinal());
     }
 
     @Override

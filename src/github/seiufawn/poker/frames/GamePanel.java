@@ -52,7 +52,7 @@ public class GamePanel extends PanelBase {
         add(showTips);
 
         // 初始化消息
-        showMessage = addLabel("", 300, 100, 300, 20);
+        showMessage = addLabel("", 200, 100, 600, 20);
         showMessage.setVisible(false);
         showMessage.setFont(Frame.BOLD_20);
         add(showMessage);
@@ -66,17 +66,17 @@ public class GamePanel extends PanelBase {
         add(btnPlayPoker);
         btnLogic.add(btnPlayPoker);
         btnPlayPoker.addActionListener(e -> {
-            // TODO 出牌逻辑
+            // 出牌逻辑
             if (pokerSelectIndex == -1) {
                 showTips("请选择要出的牌");
             } else {
                 defaultPokerSize--;
-                // TODO 发送消息: 出牌
+                // 发送消息: 出牌
+                socket.sendPoker(pokers.get(pokerSelectIndex));
+                // 重置颜色
+                btnPokers.get(pokerSelectIndex).setBackground(Color.LIGHT_GRAY);
                 // 先本地更新一下牌组
-                pokers.remove(pokerSelectIndex);
-                setPokers(pokers);
                 pokerSelectIndex = -1;
-                updateUI();
             }
         });
         JButton btnGiveUp = new JButton("放弃");
@@ -87,17 +87,16 @@ public class GamePanel extends PanelBase {
         add(btnGiveUp);
         btnLogic.add(btnGiveUp);
         btnGiveUp.addActionListener(e -> {
-            // TODO 放弃逻辑
-            // TODO 发送消息: 放弃
-//            defaultPokerSize++;
-//            setPokerBtnSize(defaultPokerSize);
+            // 放弃逻辑
+            // 发送消息: 放弃
+            socket.giveUp();
         });
         btnLogic.forEach(jbtn -> jbtn.setVisible(false));
 
         // 初始化当前牌
         btnLastPoker = new JButton(":)");
         btnLastPoker.setBounds(340, 200, 80, 120);
-        btnLastPoker.setFont(Frame.BOLD_20);
+        btnLastPoker.setFont(Frame.BOLD_12);
         btnLastPoker.setBackground(Color.white);
         btnLastPoker.setVisible(false);
         add(btnLastPoker);
@@ -213,6 +212,7 @@ public class GamePanel extends PanelBase {
 
     // 设置牌
     public void setPokers(java.util.List<Poker> list) {
+        Collections.sort(list);
         pokers = list;
         int size = pokers.size();
         if (size == 0) {
@@ -222,14 +222,14 @@ public class GamePanel extends PanelBase {
         btnPokers.forEach(this::remove); // 简化for循环 但是有限制 目前这个情况是可用的
         btnPokers.clear();
         // 重新生成牌队列所有元素
-        int x = 430 - (int) (size / 2D * 80);
+        int x = 430 - (int) (size / 2D * 90);
         // TODO 采用对象池技术可以进一步优化
         for (int i = 0; i < size; i++) {
             JButton btn = new JButton(pokers.get(i).getName());
             add(btn);
             btnPokers.add(btn);
             btn.setFont(Frame.BOLD_12);
-            btn.setBounds(x + 80 * i, 420, 70, 120);
+            btn.setBounds(x + 90 * i, 420, 80, 120);
             btn.setVisible(true);
             btn.setBackground(Color.LIGHT_GRAY);
             int finalI = i;
@@ -242,15 +242,9 @@ public class GamePanel extends PanelBase {
                     pokerSelectIndex = finalI;
                     Random random = new Random();
                     btn.setBackground(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-                    btn.setForeground(new Color(
-                            255 - btn.getBackground().getRed(),
-                            255 - btn.getBackground().getGreen(),
-                            255 - btn.getBackground().getBlue()
-                    ));
                 }
                 if (lastSelectIndex != -1) {
                     btnPokers.get(lastSelectIndex).setBackground(Color.LIGHT_GRAY);
-                    btnPokers.get(lastSelectIndex).setForeground(Color.BLACK);
                 }
             });
         }

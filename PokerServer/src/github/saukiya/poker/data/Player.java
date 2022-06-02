@@ -19,6 +19,10 @@ public class Player {
 
     public String name;
 
+    public Poker currentPoker;
+
+    public boolean giveUp;
+
     public Player(Socket socket) {
         Server.players.add(this);
         this.socket = new PlayerSocket(this, socket);
@@ -34,8 +38,14 @@ public class Player {
         });
     }
 
-    public void givePoker(Poker poker) {
-        pokers.add(poker);
+    /**
+     * 删除手牌
+     * 因为不和pokers中的牌同一个对象(由PlayerSocket通信中生成的Poker) 所以只能用if判断
+     *
+     * @param removePoker
+     */
+    public boolean takePoker(Poker removePoker) {
+        return pokers.removeIf(poker -> poker.value.equals(removePoker.value) && poker.suit == removePoker.suit);
     }
 
     @Override

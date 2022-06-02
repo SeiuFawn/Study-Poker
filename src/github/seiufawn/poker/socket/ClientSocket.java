@@ -48,6 +48,14 @@ public class ClientSocket extends Thread {
         }
     }
 
+    public void sendPoker(Poker poker) {
+        sendMessage("sendPoker" , poker.toString());
+    }
+
+    public void giveUp() {
+        sendMessage("giveUp");
+    }
+
     /**
      * 发送消息给服务器
      *
@@ -86,6 +94,8 @@ public class ClientSocket extends Thread {
                 if (args.length > 1) {
                     // 将 args[1] 转成一个Poker
                     handler.setLastPoker(args[0], Poker.FormString(args[1]));
+                } else {
+                    handler.setLastPoker(null, null);
                 }
                 break;
             // 设置玩家 - 玩家1 玩家2 玩家3 玩家4
@@ -102,7 +112,9 @@ public class ClientSocket extends Thread {
                 List<Poker> pokers = new ArrayList<>();
                 for (String arg : args) {
                     // 将 arg 转成一个Poker
-                    pokers.add(Poker.FormString(arg));
+                    Poker poker = Poker.FormString(arg);
+                    if (poker != null)
+                    pokers.add(poker);
                 }
                 handler.setPokers(pokers);
                 break;
@@ -130,7 +142,7 @@ public class ClientSocket extends Thread {
     @Override
     public void run() {
         // 定义接收规则 "[类型] 消息"
-        Pattern p = Pattern.compile("\\[(.+?)] ?(.+?)");
+        Pattern p = Pattern.compile("\\[(.+?)] ?(.*?)");
         String input;
         try {
             while (socket != null && (input = reader.readLine()) != null) {

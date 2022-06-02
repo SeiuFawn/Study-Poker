@@ -10,12 +10,16 @@
   <component name="ChangeListManager">
     <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="重构字体字段">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Suit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +52,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Color.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,6 +115,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -118,20 +126,7 @@
       <recent name="github.saukiya.poker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Frame">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Frame4">
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
       <module name="Poker" />
@@ -175,6 +170,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -286,6 +292,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
@@ -350,8 +357,8 @@
       <map>
         <entry key="flags" value="0" />
         <entry key="mode" value="1" />
-        <entry key="regex" value="\[(.+?)] {0,1}(.+?)" />
-        <entry key="text" value="[阿巴] " />
+        <entry key="regex" value="\[(.+?)] ?(.*?)" />
+        <entry key="text" value="[阿巴] 2" />
       </map>
     </option>
   </component>
