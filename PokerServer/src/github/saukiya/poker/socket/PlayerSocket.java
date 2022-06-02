@@ -99,6 +99,7 @@ public class PlayerSocket extends Thread {
                 break;
             default:
                 System.out.println("input type error[" + getIpAndPort() + "]: " + type);
+                break;
         }
     }
 
@@ -125,6 +126,7 @@ public class PlayerSocket extends Thread {
             e.printStackTrace();
         }
         System.out.println("input[" + getIpAndPort() + "] end");
+        Server.tackPlayer(player);
     }
 
     public String getIpAndPort() {

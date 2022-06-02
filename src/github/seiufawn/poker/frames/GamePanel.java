@@ -44,21 +44,20 @@ public class GamePanel extends PanelBase {
 
     public GamePanel() {
         super("游戏界面");
-        socket = new ClientSocket(this);
-        socket.start();
-
         setLayout(null);
 
+        // 初始化提示
         showTips = addLabel("", 360, 330, 300, 20);
         showTips.setVisible(false);
         add(showTips);
 
-        showMessage = addLabel("TEST", 300, 100, 300, 20);
-        showMessage.setVisible(true);
+        // 初始化消息
+        showMessage = addLabel("", 300, 100, 300, 20);
+        showMessage.setVisible(false);
         showMessage.setFont(Frame.BOLD_20);
         add(showMessage);
 
-        // 设置出牌和放弃
+        // 初始化出牌和放弃
         JButton btnPlayPoker = new JButton("出牌");
         btnPlayPoker.setBounds(275, 350, 100, 50);
         btnPlayPoker.setFont(Frame.BOLD_20);
@@ -66,7 +65,20 @@ public class GamePanel extends PanelBase {
         btnPlayPoker.setBackground(Color.GRAY);
         add(btnPlayPoker);
         btnLogic.add(btnPlayPoker);
-
+        btnPlayPoker.addActionListener(e -> {
+            // TODO 出牌逻辑
+            if (pokerSelectIndex == -1) {
+                showTips("请选择要出的牌");
+            } else {
+                defaultPokerSize--;
+                // TODO 发送消息: 出牌
+                // 先本地更新一下牌组
+                pokers.remove(pokerSelectIndex);
+                setPokers(pokers);
+                pokerSelectIndex = -1;
+                updateUI();
+            }
+        });
         JButton btnGiveUp = new JButton("放弃");
         btnGiveUp.setBounds(475, 350, 100, 50);
         btnGiveUp.setFont(Frame.BOLD_20);
@@ -74,7 +86,15 @@ public class GamePanel extends PanelBase {
         btnGiveUp.setBackground(Color.GRAY);
         add(btnGiveUp);
         btnLogic.add(btnGiveUp);
+        btnGiveUp.addActionListener(e -> {
+            // TODO 放弃逻辑
+            // TODO 发送消息: 放弃
+//            defaultPokerSize++;
+//            setPokerBtnSize(defaultPokerSize);
+        });
+        btnLogic.forEach(jbtn -> jbtn.setVisible(false));
 
+        // 初始化当前牌
         btnLastPoker = new JButton(":)");
         btnLastPoker.setBounds(340, 200, 80, 120);
         btnLastPoker.setFont(Frame.BOLD_20);
@@ -104,29 +124,12 @@ public class GamePanel extends PanelBase {
         playerInfos.forEach(playerInfo -> playerInfo[0].setFont(Frame.BOLD_20));
 
         playerRound = addLabel("当前回合：{playerName}", 370, 160, 300, 20);
+        playerRound.setVisible(false);
         addLabel("上家打出的手牌:", 360, 140, 300, 20);
 
-        btnPlayPoker.addActionListener(e -> {
-            // TODO 出牌逻辑
-            if (pokerSelectIndex == -1) {
-                showTips("请选择要出的牌");
-            } else {
-                defaultPokerSize--;
-                // TODO 发送消息: 出牌
-                // 先本地更新一下牌组
-                pokers.remove(pokerSelectIndex);
-                setPokers(pokers);
-                pokerSelectIndex = -1;
-                updateUI();
-            }
-        });
-
-        btnGiveUp.addActionListener(e -> {
-            // TODO 放弃逻辑
-            // TODO 发送消息: 放弃
-//            defaultPokerSize++;
-//            setPokerBtnSize(defaultPokerSize);
-        });
+        // 建立连接
+        socket = new ClientSocket(this);
+        socket.start();
 
     }
 
@@ -205,6 +208,7 @@ public class GamePanel extends PanelBase {
 
         // 显示当前回合的玩家
         playerRound.setText("当前回合：" + playerName);
+        playerRound.setVisible(true);
     }
 
     // 设置牌

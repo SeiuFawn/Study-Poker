@@ -4,15 +4,18 @@
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="All Places" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="重构字体字段">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +48,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/Color.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,7 +108,6 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -119,7 +118,20 @@
       <recent name="github.saukiya.poker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Frame">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
       <module name="Poker" />
@@ -129,6 +141,27 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Frame2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
+      <module name="Poker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Frame3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
+      <module name="Poker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Frame4" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
+      <module name="Poker" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,36 +179,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="github.seiufawn.poker.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Main" />
-      <module name="Poker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="github.seiufawn.poker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Frame2" />
+      <item itemvalue="Application.Frame3" />
+      <item itemvalue="Application.Frame4" />
+      <item itemvalue="Application.Frame" />
+      <item itemvalue="Application.Server" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Frame" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -202,6 +216,7 @@
       <workItem from="1654070795030" duration="17008000" />
       <workItem from="1654102677192" duration="8354000" />
       <workItem from="1654145899945" duration="1230000" />
+      <workItem from="1654159483220" duration="2158000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1654064107731</created>
@@ -271,7 +286,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />

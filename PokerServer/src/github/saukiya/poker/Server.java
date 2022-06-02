@@ -34,4 +34,9 @@ public class Server {
         players.forEach(player -> player.socket.setPlayers(players));
     }
 
+    public static void tackPlayer(Player player) {
+        players.remove(player);
+        players.forEach(p -> p.socket.setPlayers(players));
+    }
+
 }

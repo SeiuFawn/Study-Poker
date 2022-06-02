@@ -24,6 +24,7 @@ public class Frame extends JFrame {
     public Frame() {
         setLocation(300, 300);
         setSize(900, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) {

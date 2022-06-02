@@ -24,7 +24,6 @@ public class Player {
         this.socket = new PlayerSocket(this, socket);
         this.socket.start();
         this.uuid = UUID.randomUUID();
-        this.name = uuid.toString();
     }
 
     public void startGame(ArrayList<Poker> pokerLib) {

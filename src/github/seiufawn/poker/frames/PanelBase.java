@@ -46,7 +46,7 @@ public class PanelBase extends JPanel {
         if (timerMap.containsKey(finalKey)) timerMap.get(finalKey).stop();
         Timer timer = new Timer(delay, e -> {
             action.run();
-            timerMap.remove(finalKey);
+            timerMap.remove(finalKey).stop();
         });
         timerMap.put(finalKey, timer);
         timer.start();
