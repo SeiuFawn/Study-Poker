@@ -172,8 +172,9 @@ public class GamePanel extends PanelBase {
         }
         if (myIndex == -1) return;
         // 变换 players
-        for (int index = myIndex - 1; index >= 0; index--) {
-            players.add(players.remove(index));
+        for (int index = 0; index < myIndex; index++) {
+            System.out.println("当前移动为"+players.get(0));
+            players.add(players.remove(0));
         }
         // 给JLabel赋值
         for (int i = 0; i < playerInfos.size(); i++) {
