@@ -46,5 +46,4 @@ public class HomePanel extends PanelBase {
         });
         updateUI();
     }
-
 }

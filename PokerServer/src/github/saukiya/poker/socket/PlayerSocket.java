@@ -23,7 +23,7 @@ public class PlayerSocket extends Thread {
     // 写入流
     BufferedWriter writer;
 
-    // 输入流
+    // 输出流
     BufferedReader reader;
 
     public PlayerSocket(Player player, Socket socket) {
@@ -90,7 +90,7 @@ public class PlayerSocket extends Thread {
     }
 
     /**
-     * TODO 处理客户端消息逻辑
+     *处理客户端消息逻辑
      *
      * @param type 类型
      * @param args 参数
@@ -135,7 +135,7 @@ public class PlayerSocket extends Thread {
         } catch (IOException ignored) {
         }
         System.out.println("input[" + getIpAndPort() + "] end");
-        Server.tackPlayer(player);
+        Server.takePlayer(player);
     }
 
     public String getIpAndPort() {

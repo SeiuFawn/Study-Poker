@@ -59,54 +59,6 @@ public class Poker implements Comparable<Poker> {
     }
 
     /**
-     * 字符串转Poker
-     *
-     * @param string 字符串
-     * @return Poker 失败则是null
-     */
-    public static Poker FormString(String string) {
-        Poker poker = new Poker(null, null);
-        for (String s : string.split(",")) {
-            String[] args = s.split(":");
-            if (args.length > 1) {
-                switch (args[0]) {
-                    case "value":
-                        poker.value = Integer.parseInt(args[1]);
-                        break;
-                    case "suit":
-                        poker.suit = Suit.valueOf(args[1]);
-                        break;
-                }
-            }
-        }
-        if (poker.value != null && poker.suit != null) {
-            return poker;
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * 创建牌库（并赋值）
-     */
-    public static ArrayList<Poker> createPokers() {
-        ArrayList<Poker> pokerLib = new ArrayList<>();
-        for (int i = 15; i > 0; i--) {
-            switch (i) {
-                case 15:
-                case 14:
-                    pokerLib.add(new Poker(i, Suit.king));
-                    break;
-                default:
-                    int finalI = i;
-                    IntStream.range(0, 4).forEach(b -> pokerLib.add(new Poker(finalI, Suit.values()[b])));
-                    break;
-            }
-        }
-        return pokerLib;
-    }
-
-    /**
      * 获取牌类型
      *
      * @return 2 - 功能牌(??), 1 - 特殊牌(仙人), 0 - 普通牌(妖怪)
@@ -171,5 +123,53 @@ public class Poker implements Comparable<Poker> {
                 if (poker2.value == 10) return 1;
                 return -1;
         }
+    }
+
+    /**
+     * 字符串转Poker
+     *
+     * @param string 字符串
+     * @return Poker 失败则是null
+     */
+    public static Poker FormString(String string) {
+        Poker poker = new Poker(null, null);
+        for (String s : string.split(",")) {
+            String[] args = s.split(":");
+            if (args.length > 1) {
+                switch (args[0]) {
+                    case "value":
+                        poker.value = Integer.parseInt(args[1]);
+                        break;
+                    case "suit":
+                        poker.suit = Suit.valueOf(args[1]);
+                        break;
+                }
+            }
+        }
+        if (poker.value != null && poker.suit != null) {
+            return poker;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 创建牌库（并赋值）
+     */
+    public static ArrayList<Poker> createPokers() {
+        ArrayList<Poker> pokerLib = new ArrayList<>();
+        for (int i = 15; i > 0; i--) {
+            switch (i) {
+                case 15:
+                case 14:
+                    pokerLib.add(new Poker(i, Suit.king));
+                    break;
+                default:
+                    int finalI = i;
+                    IntStream.range(0, 4).forEach(b -> pokerLib.add(new Poker(finalI, Suit.values()[b])));
+                    break;
+            }
+        }
+        return pokerLib;
     }
 }

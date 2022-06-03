@@ -14,9 +14,10 @@ public class GamePanel extends PanelBase {
 
     ClientSocket socket;
 
-    int defaultPokerSize = 5;
+    // 当前选择牌的索引值
     int pokerSelectIndex = -1;
 
+    // 出牌 放弃逻辑组
     java.util.List<JButton> btnLogic = new ArrayList<>();
 
     // 自己的手牌
@@ -42,6 +43,7 @@ public class GamePanel extends PanelBase {
     // 上一张牌按钮
     JButton btnLastPoker;
 
+    // 修饰符-可有可无 当前对象名（成员/无参）
     public GamePanel() {
         super("游戏界面");
         setLayout(null);
@@ -70,7 +72,6 @@ public class GamePanel extends PanelBase {
             if (pokerSelectIndex == -1) {
                 showTips("请选择要出的牌");
             } else {
-                defaultPokerSize--;
                 // 发送消息: 出牌
                 socket.sendPoker(pokers.get(pokerSelectIndex));
                 // 重置颜色
@@ -132,6 +133,7 @@ public class GamePanel extends PanelBase {
 
     }
 
+    // 修饰符-可有可无  void/对象类型 方法名（成员/无参）
     // 展示提示
     public void showTips(String message) {
         showTips.setText(message);
@@ -182,7 +184,7 @@ public class GamePanel extends PanelBase {
             Player player = players.size() > i ? players.get(i) : null;
             if (player != null) {
                 playerInfo[0].setText("玩家 " + player.name);
-                playerInfo[1].setText("手牌数: " + player.size);
+                playerInfo[1].setText("手牌数: " + player.count);
                 // 如果人齐了 才显示
                 playerInfo[1].setVisible(done);
             } else {
@@ -224,7 +226,6 @@ public class GamePanel extends PanelBase {
         btnPokers.clear();
         // 重新生成牌队列所有元素
         int x = 430 - (int) (size / 2D * 90);
-        // TODO 采用对象池技术可以进一步优化
         for (int i = 0; i < size; i++) {
             JButton btn = new JButton(pokers.get(i).getName());
             add(btn);
@@ -235,7 +236,6 @@ public class GamePanel extends PanelBase {
             btn.setBackground(Color.LIGHT_GRAY);
             int finalI = i;
             btn.addActionListener(e -> {
-                //TODO 点击牌的逻辑
                 int lastSelectIndex = pokerSelectIndex;
                 if (pokerSelectIndex == finalI) {
                     pokerSelectIndex = -1;

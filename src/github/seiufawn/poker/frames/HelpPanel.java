@@ -32,5 +32,4 @@ public class HelpPanel extends PanelBase {
             new HomePanel();
         });
     }
-
 }

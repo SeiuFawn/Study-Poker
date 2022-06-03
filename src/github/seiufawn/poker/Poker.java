@@ -48,7 +48,6 @@ public class Poker implements Comparable<Poker> {
         return valueCompareTo != 0 ? valueCompareTo : Integer.compare(suit.ordinal(), o.suit.ordinal());
     }
 
-    @Override
     public String toString() {
         return MessageFormat.format("value:{0},suit:{1}", value, suit);
     }

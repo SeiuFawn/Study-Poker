@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
  */
 public class ClientSocket extends Thread {
 
-    String host = "127.0.0.1";
+    public static String host = "127.0.0.1";
 
     // 服务器链接
     public Socket socket;

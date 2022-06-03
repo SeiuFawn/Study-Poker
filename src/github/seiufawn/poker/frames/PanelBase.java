@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // 面板基类
-public class PanelBase extends JPanel {
+public abstract class PanelBase extends JPanel {
 
     // 计时器
     static Map<String, Timer> timerMap = new HashMap<>();
@@ -52,9 +52,7 @@ public class PanelBase extends JPanel {
         timer.start();
     }
 
-    /**
-     * 关闭界面
-     */
+    //关闭界面
     public void close() {
         setVisible(false);
     }

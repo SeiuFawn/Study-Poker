@@ -8,9 +8,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="完善全部游戏逻辑">
+    <list default="true" id="825a5a48-3ab6-4a81-a393-c9b232cb9da7" name="Default Changelist" comment="修复显示玩家顺序问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Poker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data/Suit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/socket/PlayerSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/Poker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HelpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/HomePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/frames/PanelBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/seiufawn/poker/socket/ClientSocket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +70,7 @@
   </component>
   <component name="ProjectId" id="29mpgE4fqFeCXADMRVuIgARErGZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -95,20 +108,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PokerServer/src/github/saukiya/poker/data" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "run.code.analysis.last.selected.profile": "pProject Default"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="Z:\Dev\Java\Projects\Study-Poker\PokerServer\src\github\saukiya\poker\data" />
@@ -117,7 +122,18 @@
       <recent name="github.saukiya.poker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Frame4">
+  <component name="RunManager" selected="应用程序.Frame4">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="github.seiufawn.poker.Frame" />
       <module name="Poker" />
@@ -165,28 +181,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Frame2" />
-      <item itemvalue="Application.Frame3" />
-      <item itemvalue="Application.Frame4" />
-      <item itemvalue="Application.Frame" />
-      <item itemvalue="Application.Server" />
+      <item itemvalue="应用程序.Frame2" />
+      <item itemvalue="应用程序.Frame3" />
+      <item itemvalue="应用程序.Frame4" />
+      <item itemvalue="应用程序.Frame" />
+      <item itemvalue="应用程序.Server" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Frame" />
-        <item itemvalue="Application.Server" />
+        <item itemvalue="应用程序.Frame" />
+        <item itemvalue="应用程序.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +219,8 @@
       <workItem from="1654102677192" duration="8354000" />
       <workItem from="1654145899945" duration="1230000" />
       <workItem from="1654159483220" duration="2158000" />
+      <workItem from="1654198196834" duration="48000" />
+      <workItem from="1654218440455" duration="14452000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1654064107731</created>
@@ -236,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654196753412</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修复显示玩家顺序问题">
+      <created>1654220930368</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654220930368</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -290,13 +304,13 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
     <MESSAGE value="重构字体字段" />
     <MESSAGE value="完善全部游戏逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善全部游戏逻辑" />
+    <MESSAGE value="修复显示玩家顺序问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复显示玩家顺序问题" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

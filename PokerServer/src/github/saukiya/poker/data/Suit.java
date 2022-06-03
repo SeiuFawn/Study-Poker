@@ -15,5 +15,4 @@ public enum Suit {
         this.show = show;
         this.value = value;
     }
-
 }

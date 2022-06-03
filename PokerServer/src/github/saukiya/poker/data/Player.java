@@ -7,7 +7,6 @@ import java.net.Socket;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.stream.IntStream;
 
 public class Player {
 
@@ -28,14 +27,6 @@ public class Player {
         this.socket = new PlayerSocket(this, socket);
         this.socket.start();
         this.uuid = UUID.randomUUID();
-    }
-
-    public void startGame(ArrayList<Poker> pokerLib) {
-        IntStream.range(0, 5).forEach(b -> {
-            Poker poker = pokerLib.get((int) (Math.random() * pokerLib.size()));
-            pokers.add(poker);
-            pokerLib.remove(poker);
-        });
     }
 
     /**

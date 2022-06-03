@@ -20,7 +20,6 @@ public class Server {
 
             while (true) {
 
-                // TODO 等待玩家
                 while (players.size() < 4) {
                     // 服务器等待连接 然后传入Player构造器
                     System.out.println("JoinPlayer -> " +  new Player(serverSocket.accept()).socket.getIpAndPort());
@@ -166,7 +165,7 @@ public class Server {
         players.forEach(player -> player.socket.setPlayers(players));
     }
 
-    public static void tackPlayer(Player player) {
+    public static void takePlayer(Player player) {
         players.remove(player);
         players.forEach(p -> p.socket.setPlayers(players));
     }
@@ -182,5 +181,4 @@ public class Server {
     public static void setLastPoker(String playerName, Poker poker) {
         players.forEach(player -> player.socket.setLastPoker(playerName, poker));
     }
-
 }
